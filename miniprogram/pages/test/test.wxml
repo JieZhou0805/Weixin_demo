@@ -1,0 +1,15 @@
+<!-- test.wxml -->
+<view class="pic"> 
+  <image  src="cloud://airpods-demo-vs3k9.6169-airpods-demo-vs3k9-1303866413/image/IMG_2030c.JPG" mode="widthFix"
+  style="width:100%;">
+  </image>
+</view>
+
+<view>
+  <view class = "wish" style="margin-right: 30px;margin-left:30px;"> 
+    Wish all of us a happy day!
+  </view>
+  <text class="version">
+    Version: 1.0.0
+  </text>
+</view>

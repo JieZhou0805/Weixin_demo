@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/databaseGuide/databaseGuide",
+    "pages/deployFunctions/deployFunctions",
+    "pages/userConsole/userConsole",
+    "pages/test/test",
+    "pages/table/table",
+    "pages/submit/submit"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "AirPods Survey",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "image/table.png",
+        "selectedIconPath": "image/table1.png",
+        "pagePath": "pages/table/table",
+        "text": "Survey"
+      },
+      {
+        "iconPath": "image/homepage.png",
+        "selectedIconPath": "image/homepage1.png",
+        "pagePath": "pages/index/index",
+        "text": "Homepage"
+      },
+      {
+        "iconPath": "image/egg.png",
+        "selectedIconPath": "image/egg1.png",
+        "pagePath": "pages/test/test",
+        "text": "Surprise"
+      }
+    ],
+    "position": "bottom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

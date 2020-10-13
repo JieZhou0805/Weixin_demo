@@ -1,0 +1,18 @@
+/**test.wxss**/
+.pic{
+ display:flex;                   
+ justify-content: center; 
+}
+.wish{
+  color: rgba(100, 11, 11, 0.918);
+  font-size: 45rpx;
+  margin: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.version{
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+}
