@@ -1,4 +1,4 @@
-// miniprogram/pages/Qpage1/Qpage1.js
+// miniprogram/pages/Qpage/Qpage.js
 const app = getApp()
 
 Page({
@@ -8,6 +8,7 @@ Page({
     openid: '',
     count: null,
     queryResult: '',
+    inputValue: '',
     items: [
       { name: 'Y', value: 'Yes. \t\t' },
       { name: 'N', value: 'No.  ' },
@@ -19,7 +20,41 @@ Page({
     ],
     checkboxChange: function (e) {
       console.log('checkbox发生change事件，携带value值为：', e.detail.value)
-    }
+    },
+
+    array: ['TongJi University', 'FuDan University', 'SHJTU', 'ECNU'],
+    objectArray: [
+      {
+        id: 0,
+        name: 'TongJi University'
+      },
+      {
+        id: 1,
+        name: 'FuDan University'
+      },
+      {
+        id: 2,
+        name: 'SHJTU'
+      },
+      {
+        id: 3,
+        name: 'ECNU'
+      }
+    ],
+    index: -1
+  },
+
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
   },
 
   onLoad: function (options) {
@@ -61,6 +96,9 @@ Page({
           title: '新增记录成功',
         })
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        wx.navigateTo({
+          url: "../submit/submit" //跳转到新的页面
+        })
       },
       fail: err => {
         wx.showToast({
@@ -72,28 +110,7 @@ Page({
     })
   },
 
-  onQuery: function() {
-    const db = wx.cloud.database()
-    // 查询当前用户所有的 counters
-    db.collection('counters').where({
-      _openid: this.data.openid
-    }).get({
-      success: res => {
-        this.setData({
-          queryResult: JSON.stringify(res.data, null, 2)
-        })
-        console.log('[数据库] [查询记录] 成功: ', res)
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '查询记录失败'
-        })
-        console.error('[数据库] [查询记录] 失败：', err)
-      }
-    })
-  },
-
+  
   nextStep: function () {
     // 在第一步，需检查是否有 openid，如无需获取
     if (this.data.step === 1 && !this.data.openid) {
@@ -132,21 +149,6 @@ Page({
     this.setData({
       step: this.data.step - 1
     })
-  },
-
-  goHome: function() {
-    const pages = getCurrentPages()
-    if (pages.length === 2) {
-      wx.navigateBack()
-    } else if (pages.length === 1) {
-      wx.redirectTo({
-        url: '../index/index',
-      })
-    } else {
-      wx.reLaunch({
-        url: '../index/index',
-      })
-    }
   }
 
 })

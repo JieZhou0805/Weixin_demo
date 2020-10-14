@@ -1,4 +1,4 @@
-<!--miniprogram/pages/Qpage1/Qpage1.wxml-->
+<!--miniprogram/pages/Qpage/Qpage.wxml-->
 <view class="container">
   <!-- 第一页问题 -->
   <view class="questionPage1" wx:if="{{step === 1}}">
@@ -13,19 +13,37 @@
       <text class="Q1">
         1. Please choose your unversity.
       </text>
+      <view class="section">
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+      </view>
 
       <text class="Q2">
         2. Please enter your name.
       </text>
+      <input class="input" type="text"  bindinput="userNameInput"/>
 
       <text class="Q3">
         3. Please enter your student ID.
       </text>
+      <input class="input" type="number" bindinput="userIDInput"/>
 
       <text class="Q4">
         4. Please enter your date of birth.
       </text>
+      <view class="section_date">
+        <picker mode="date" value="{{date}}" start="1980-01-01" end="2020-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+
     </view>
+
     <div class="nav">
       <button class="next" size="mini" type="default" bindtap="nextStep">下一步</button>
     </div>
@@ -85,6 +103,25 @@
           <button size="mini" type="default" bindtap="onAdd">提交</button>
       </div>
     </view>
+  </view>
+
+
+  <!-- 第三页 提交成功 -->
+  <view class="submit" wx:if="{{step === 3}}">
+  
+    <div class="nav">
+      <button class="next" size="mini" type="default" bindtap="onQuery">查看提交内容</button>
+    </div>
+  
+  </view>
+
+  <!-- 第四页 查看提交的内容 -->
+  <view class="query" wx:if="{{step === 4}}">
+    <div class="nav">
+      <button class="next" size="mini" type="default" bindtap="goHome">回到首页</button>
+    </div>
+  
+  
   </view>
 
 </view>

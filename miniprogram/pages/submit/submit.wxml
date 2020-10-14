@@ -1,2 +1,18 @@
-<!--miniprogram/pages/submit/submit.wxml-->
-<text>miniprogram/pages/submit/submit.wxml</text>
+<!--miniprogram/submit/submit.wxml-->
+  <!-- 第三页 提交成功 -->
+  <view class="submit" wx:if="{{step === 1}}">
+  
+  <div class="nav">
+    <button class="next" size="mini" type="default" bindtap="onQuery">查看提交内容</button>
+  </div>
+
+</view>
+
+<!-- 第四页 查看提交的内容 -->
+<view class="query" wx:if="{{step === 2}}">
+  <div class="nav">
+    <button class="next" size="mini" type="default" bindtap="goHome">回到首页</button>
+  </div>
+
+
+</view>

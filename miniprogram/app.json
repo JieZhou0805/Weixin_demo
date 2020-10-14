@@ -4,8 +4,8 @@
     "pages/deployFunctions/deployFunctions",
     "pages/userConsole/userConsole",
     "pages/test/test",
-    "pages/submit/submit",
-    "pages/Qpage1/Qpage1"
+    "pages/Qpage/Qpage",
+    "pages/submit/submit"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -22,7 +22,7 @@
       {
         "iconPath": "image/table.png",
         "selectedIconPath": "image/table1.png",
-        "pagePath": "pages/Qpage1/Qpage1",
+        "pagePath": "pages/Qpage/Qpage",
         "text": "Survey"
       },
       {
