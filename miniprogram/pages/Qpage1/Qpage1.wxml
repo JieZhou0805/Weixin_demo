@@ -1,0 +1,90 @@
+<!--miniprogram/pages/Qpage1/Qpage1.wxml-->
+<view class="container">
+  <!-- 第一页问题 -->
+  <view class="questionPage1" wx:if="{{step === 1}}">
+    <view class="title">
+      <image class="airpods" src="cloud://airpods-demo-vs3k9.6169-airpods-demo-vs3k9-1303866413/image/airpods.png" mode="aspectFill">
+      </image>
+      <text class="title_text">
+        A survey about Airpods.
+      </text>
+    </view>
+    <view class="questions">
+      <text class="Q1">
+        1. Please choose your unversity.
+      </text>
+
+      <text class="Q2">
+        2. Please enter your name.
+      </text>
+
+      <text class="Q3">
+        3. Please enter your student ID.
+      </text>
+
+      <text class="Q4">
+        4. Please enter your date of birth.
+      </text>
+    </view>
+    <div class="nav">
+      <button class="next" size="mini" type="default" bindtap="nextStep">下一步</button>
+    </div>
+  </view> 
+
+  <!-- 第二页问题 -->
+  <view class="questionPage2" wx:if="{{step === 2}}">
+    <view class="title">
+      <image class="airpods" src="cloud://airpods-demo-vs3k9.6169-airpods-demo-vs3k9-1303866413/image/airpods.png" mode="aspectFill">
+      </image>
+      <text class="title_text">
+        A survey about Airpods.
+      </text>
+    </view>
+
+    <view class="questions">
+      <text class="Q1">
+        1. Do you think Airpods are necessary?
+      </text>
+      <view class="A1">
+          <view class="section section_gap">
+              <radio-group class="radio-group" bindchange="radioChange">
+                  <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                      <text>{{item.value}}</text>
+                  </radio>
+              </radio-group>
+          </view>
+      </view>
+
+      <text class="Q2">
+        2. Do they really improve your quality of your life?
+      </text>
+      <view class="A2">
+          <view class="section section_gap">
+              <radio-group class="radio-group" bindchange="radioChange">
+                  <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                      <text>{{item.value}}</text>
+                  </radio>
+              </radio-group>
+          </view>
+      </view>
+
+      <text class="Q3">
+        3. Have you ever lost one of your airpods?
+      </text>
+      <view class="A3">
+          <view class="section section_gap">
+              <radio-group class="radio-group" bindchange="radioChange">
+                  <radio class="radio" wx:for-items="{{items_2}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+                      <text>{{item.value}}</text>
+                  </radio>
+              </radio-group>
+          </view>
+      </view>
+      <div class="nav">
+          <button class="prev" size="mini" type="default" bindtap="prevStep">上一步</button>
+          <button size="mini" type="default" bindtap="onAdd">提交</button>
+      </div>
+    </view>
+  </view>
+
+</view>

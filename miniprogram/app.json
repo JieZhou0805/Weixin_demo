@@ -1,12 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/databaseGuide/databaseGuide",
     "pages/deployFunctions/deployFunctions",
     "pages/userConsole/userConsole",
     "pages/test/test",
-    "pages/table/table",
-    "pages/submit/submit"
+    "pages/submit/submit",
+    "pages/Qpage1/Qpage1"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -23,7 +22,7 @@
       {
         "iconPath": "image/table.png",
         "selectedIconPath": "image/table1.png",
-        "pagePath": "pages/table/table",
+        "pagePath": "pages/Qpage1/Qpage1",
         "text": "Survey"
       },
       {
