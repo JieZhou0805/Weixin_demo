@@ -44,24 +44,9 @@
 
     </view>
 
-    <div class="nav">
-      <button class="next" size="mini" type="default" bindtap="nextStep">下一步</button>
-    </div>
-  </view> 
-
-  <!-- 第二页问题 -->
-  <view class="questionPage2" wx:if="{{step === 2}}">
-    <view class="title">
-      <image class="airpods" src="cloud://airpods-demo-vs3k9.6169-airpods-demo-vs3k9-1303866413/image/airpods.png" mode="aspectFill">
-      </image>
-      <text class="title_text">
-        A survey about Airpods.
-      </text>
-    </view>
-
     <view class="questions">
       <text class="Q1">
-        1. Do you think Airpods are necessary?
+        5. Do you think Airpods are necessary?
       </text>
       <view class="A1">
           <view class="section section_gap">
@@ -74,7 +59,7 @@
       </view>
 
       <text class="Q2">
-        2. Do they really improve your quality of your life?
+        6. Do they really improve your quality of your life?
       </text>
       <view class="A2">
           <view class="section section_gap">
@@ -87,7 +72,7 @@
       </view>
 
       <text class="Q3">
-        3. Have you ever lost one of your airpods?
+        7. Have you ever lost one of your airpods?
       </text>
       <view class="A3">
           <view class="section section_gap">
@@ -99,7 +84,6 @@
           </view>
       </view>
       <div class="nav">
-          <button class="prev" size="mini" type="default" bindtap="prevStep">上一步</button>
           <button size="mini" type="default" bindtap="onAdd">提交</button>
       </div>
     </view>
