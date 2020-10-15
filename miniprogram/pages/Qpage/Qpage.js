@@ -10,9 +10,9 @@ Page({
     queryResult: '',
     inputValue: '',
     items: [
-      { name: 'Y', value: 'Yes. \t\t' },
+      { name: 'Y', value: 'Yes. ' },
       { name: 'N', value: 'No.  ' },
-      { name: 'M', value: 'Maybe' },
+      { name: 'M', value: 'Maybe.' },
     ],
     items_2: [
       { name: 'Y', value: 'Yes.  ' },
@@ -21,7 +21,6 @@ Page({
     checkboxChange: function (e) {
       console.log('checkbox发生change事件，携带value值为：', e.detail.value)
     },
-
     array: ['TongJi University', 'FuDan University', 'SHJTU', 'ECNU'],
     objectArray: [
       {
@@ -73,12 +72,7 @@ Page({
         "description": "learn mini-program cloud service",
         // 截止时间，Date 类型
         "due": Date("2018-09-01"),
-        // 标签，Array 类型
-        "tags": [
-          "tech",
-          "mini-program",
-          "cloud"
-        ],
+        "name":de,
         // 个性化样式，Object 类型
         "style": {
           "color": "red"
@@ -149,6 +143,27 @@ Page({
     this.setData({
       step: this.data.step - 1
     })
-  }
+  },
+
+  //提交表单
+  formSubmit:function(e){
+    //获取表单中输入框数据
+        var value = e.detail.value;
+        console.log(value);
+        if(value.username&&value.userID){
+          wx.setStorage({
+            name: value.username,
+            success(){
+              wx.navigateBack();
+            }
+          })
+        } else{
+          wx.showModal({
+            title: '提示',
+            content: '请填写完整资料',
+            showCancel:false
+          })
+        }
+      },
 
 })

@@ -45,6 +45,7 @@ Page({
     })
   },
 
+  //这个函数还有点问题，应该是因为pages.length
   goHome: function() {
     const pages = getCurrentPages()
     if (pages.length === 2) {
